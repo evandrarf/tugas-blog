@@ -1,0 +1,132 @@
+.card-wrapper {
+  float: right;
+  width: 53%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // overflow: hidden;
+
+  .card {
+    display: none;
+    transition: all 0.5s ease-in-out;
+    flex-direction: column;
+    background-color: azure;
+    // justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 15px;
+    // padding: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    height: 80vh;
+    max-width: 400px;
+    overflow: hidden;
+    font-family: 'Coolvetica', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(242, 235, 255, 0.5);
+    }
+
+    .img-container {
+      flex-grow: 4;
+      // height: 30px;
+      overflow: hidden;
+      height: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .img {
+        // object-fit: contain;
+        object-fit: cover;
+        // width: 100%;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.2);
+        }
+        height: 100%;
+      }
+      // img {
+      //   object-fit: cover;
+      //   height: auto;
+      //   width: auto;
+      // }
+    }
+
+    .title {
+      width: 100%;
+      // padding: 0 30px;
+      margin-left: 40px;
+      margin-top: 30px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .desc {
+      margin-top: 20px;
+      padding: 20px;
+      flex-grow: 2;
+      font-size: 13px;
+      font-family: 'Helvetica', sans-serif;
+      font-weight: 400;
+    }
+  }
+
+  .card.active {
+    display: flex;
+  }
+
+  .card-amount {
+    width: 40%;
+    // background-color: azure;
+    height: 5px;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+
+    div {
+      cursor: pointer;
+      background-color: azure;
+      height: 100%;
+      margin-left: 3px;
+      flex-grow: 1;
+    }
+
+    div.active {
+      background-color: rgb(139, 139, 139);
+    }
+  }
+}
+
+.full-image-container {
+  display: none;
+}
+
+.full-image-container.active {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  img {
+    height: 100%;
+    object-fit: contain;
+    z-index: 11;
+  }
+}
